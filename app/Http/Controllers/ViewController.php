@@ -69,4 +69,11 @@ class ViewController extends Controller
             'weeks' => ['月', '火', '水', '木', '金', '土', '日']
         ]);
     }
+
+    public function master()
+    {
+        return view('view.master', [
+            'msg' => 'Hello World from master'
+        ]);
+    }
 }
