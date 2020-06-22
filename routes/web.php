@@ -37,6 +37,7 @@ Route::prefix('view')->group(function() {
     Route::get('/comp', 'ViewController@comp');
 });
 
+Route::get('route/param/{id?}', 'RouteController@param');
 
 
 
