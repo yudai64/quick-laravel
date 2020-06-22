@@ -76,4 +76,9 @@ class ViewController extends Controller
             'msg' => 'Hello World from master'
         ]);
     }
+
+    public function comp()
+    {
+        return view('view.comp');
+    }
 }

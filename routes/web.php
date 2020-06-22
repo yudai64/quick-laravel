@@ -30,6 +30,8 @@ Route::get('view/for', 'ViewController@for');
 Route::get('view/foreach_assoc', 'ViewController@foreach_assoc');
 Route::get('view/foreach_loop', 'ViewController@foreach_loop');
 Route::get('view/master', 'ViewController@master');
+Route::get('view/comp', 'ViewController@comp');
+
 
 
 
