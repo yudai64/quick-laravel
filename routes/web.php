@@ -17,20 +17,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello', 'HelloController@index');
-Route::get('hello/view', 'HelloController@view');
-Route::get('hello/list', 'HelloController@list');
-Route::get('view/escape', 'ViewController@escape');
-Route::get('view/if', 'ViewController@if');
-Route::get('view/unless', 'ViewController@unless');
-Route::get('view/isset', 'ViewController@isset');
-Route::get('view/switch', 'ViewController@switch');
-Route::get('view/while', 'ViewController@while');
-Route::get('view/for', 'ViewController@for');
-Route::get('view/foreach_assoc', 'ViewController@foreach_assoc');
-Route::get('view/foreach_loop', 'ViewController@foreach_loop');
-Route::get('view/master', 'ViewController@master');
-Route::get('view/comp', 'ViewController@comp');
+Route::prefix('hello')->group(function() {
+    Route::get('/', 'HelloController@index');
+    Route::get('/view', 'HelloController@view');
+    Route::get('/list', 'HelloController@list');
+});
+
+Route::prefix('view')->group(function() {
+    Route::get('/escape', 'ViewController@escape');
+    Route::get('/if', 'ViewController@if');
+    Route::get('/unless', 'ViewController@unless');
+    Route::get('/isset', 'ViewController@isset');
+    Route::get('/switch', 'ViewController@switch');
+    Route::get('/while', 'ViewController@while');
+    Route::get('/for', 'ViewController@for');
+    Route::get('/foreach_assoc', 'ViewController@foreach_assoc');
+    Route::get('/foreach_loop', 'ViewController@foreach_loop');
+    Route::get('/master', 'ViewController@master');
+    Route::get('/comp', 'ViewController@comp');
+});
+
 
 
 
