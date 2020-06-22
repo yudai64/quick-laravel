@@ -39,6 +39,11 @@ Route::prefix('view')->group(function() {
 
 Route::get('route/param/{id?}', 'RouteController@param');
 
+Route::get('ctrl/form', 'CtrlController@form');
+Route::post('ctrl/result', 'CtrlController@result');
+
+
+
 
 
 
