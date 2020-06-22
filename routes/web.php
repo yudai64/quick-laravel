@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\LogMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,10 @@ Route::get('ctrl/form', 'CtrlController@form');
 Route::post('ctrl/result', 'CtrlController@result');
 Route::get('ctrl/upload', 'CtrlController@upload');
 Route::post('ctrl/uploadfile', 'CtrlController@uploadfile');
+Route::group(['middleware' => ['debug']], function () {
+    Route::get('ctrl/middle', 'CtrlController@middle');
+});
+
 
 
 
