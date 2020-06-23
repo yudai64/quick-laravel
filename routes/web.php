@@ -53,6 +53,9 @@ Route::get('state/readcookie', 'StateController@readcookie');
 Route::get('state/session1', 'StateController@session1');
 Route::get('state/session2', 'StateController@session2');
 
+Route::get('record/find', 'RecordController@find');
+Route::get('record/where', 'RecordController@where');
+
 
 
 
