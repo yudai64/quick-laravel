@@ -18,4 +18,11 @@ class RecordController extends Controller
         $result = Book::where('title', 'LIKE', '%Java%')->get();
         return view('hello.list', ['records' => $result]);
     }
+
+    public function hasmany()
+    {
+        return view('record.hasmany', [
+            'book' => Book::find(1)
+        ]);
+    }
 }
