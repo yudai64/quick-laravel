@@ -13,7 +13,12 @@ class CtrlController extends Controller
 
     public function result(Request $req)
     {
-        $name = $req->input('name', '名無権兵衛');
+        $name = $req->name;
+        if(empty($name) || mb_strlen($name) > 10) {
+            return redirect('ctrl/form')
+            ->withInput()
+            ->with('alert', '名前は必須、または、10文字以内で入力してください');
+        }
         return view('ctrl.form' ,[
             'result' => 'こんにちは、' . $name . 'さん！'
         ]);
